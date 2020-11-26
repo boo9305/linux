@@ -1,9 +1,11 @@
 set number
 set ts=2
-set expandtab
 set shiftwidth=2
+set expandtab
 set hlsearch
 set smartindent
+set autoindent
+set cindent
 
 syntax on
 
@@ -24,12 +26,13 @@ nnoremap <C-m> :bn<CR>
 imap <expr> <C-c>  emmet#expandAbbrIntelligent("\<C-c>")
 nnoremap <C-G> :TagbarToggle<CR>
 
+
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 "let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+"let g:ycm_server_python_interpreter = '/usr/bin/python3'
 "let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
 " Add spaces after comment delimiters by default
@@ -50,8 +53,13 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
+
 let g:closetag_filenames = '*.html, *.js'
 let g:closetag_filetypes = 'html, js'
+
+let g:markdown_fenced_languages = ['html', 'js']
+let g:jsx_ext_required = 0
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -61,17 +69,16 @@ Plugin 'vundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'raimondi/delimitmate'
 Plugin 'The-NERD-tree'
-Plugin 'altercation/solarized'
 Plugin 'mattn/emmet-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'Yggdroot/indentLine'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-surround'
-Plugin 'preservim/nerdcommenter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'mxw/vim-jsx'
+Plugin 'maxmellon/vim-jsx-pretty'
 call vundle#end()
 filetype plugin indent on
+"Plugin 'preservim/nerdcommenter'
