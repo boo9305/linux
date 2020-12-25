@@ -7,6 +7,11 @@ set smartindent
 set autoindent
 set cindent
 
+
+highlight Pmenu ctermbg=blue
+hi Search ctermbg=white ctermfg=black
+
+
 syntax on
 
 let mapleader=','
@@ -60,6 +65,8 @@ let g:closetag_filetypes = 'html, js'
 let g:markdown_fenced_languages = ['html', 'js']
 let g:jsx_ext_required = 0
 
+let g:jedi#popup_on_dot = 0
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -79,6 +86,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mxw/vim-jsx'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 filetype plugin indent on
 "Plugin 'preservim/nerdcommenter'
